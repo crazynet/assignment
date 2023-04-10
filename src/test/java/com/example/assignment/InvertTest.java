@@ -89,16 +89,16 @@ public class InvertTest {
                 .filter(u -> !u.toLowerCase(Locale.ROOT).equals(""))
                 .map(k -> k.toLowerCase())
                 .collect((Collectors.groupingBy(Function.identity(), Collectors.counting())));
-        Map<String, Long> result2 = new LinkedHashMap<>();
+        Map<String, Long> filteredString = new LinkedHashMap<>();
         stringLongMap.entrySet().stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed()).limit(101)
-                .forEachOrdered(x -> result2.put(x.getKey(), x.getValue()));
-        for (Map.Entry<String,Long> entry : result2.entrySet())
+                .forEachOrdered(x -> filteredString.put(x.getKey(), x.getValue()));
+        for (Map.Entry<String,Long> entry : filteredString.entrySet())
             System.out.println( entry.getValue() +
                     "," + entry.getKey());
-        assertEquals(result2.get("our"),26);
-        assertEquals(result2.get("has"),20);
-        assertEquals(result2.get("their"),20);
-        assertEquals(result2.get("he"),19);
+        assertEquals(filteredString.get("our"),26);
+        assertEquals(filteredString.get("has"),20);
+        assertEquals(filteredString.get("their"),20);
+        assertEquals(filteredString.get("he"),19);
     }
 }

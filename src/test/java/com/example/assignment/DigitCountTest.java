@@ -15,16 +15,16 @@ public class DigitCountTest {
     void testNumber() {
         Integer endNum = 35;
         Integer startNum = 1;
-        int k = 0;
+        int seriesCounter = 0;
         Integer param = 5;
         List<Integer> seriesNumbers = new ArrayList<>();
         Integer runningSeqNumber = 0;
         while (runningSeqNumber <= endNum) {
-            runningSeqNumber = param + 10 * k;
+            runningSeqNumber = param + 10 * seriesCounter;
             if (runningSeqNumber <= endNum && runningSeqNumber > startNum) {
                 seriesNumbers.add(runningSeqNumber);
             }
-            k++;
+            seriesCounter++;
         }
         List<String> stringList = seriesNumbers.stream().map(String::valueOf).collect(Collectors.toList());
         String joinedString = String.join("", stringList);
@@ -38,16 +38,16 @@ public class DigitCountTest {
     void testNumber2() {
         Integer endNum = 35;
         Integer startNum = 1;
-        int k = 0;
+        int seriesCounter = 0;
         Integer param = 3;
         List<Integer> seriesNumbers = new ArrayList<>();
         Integer runningSeqNumber = 0;
         while (runningSeqNumber <= endNum) {
-            runningSeqNumber = param + 10 * k;
+            runningSeqNumber = param + 10 * seriesCounter;
             if (runningSeqNumber <= endNum && runningSeqNumber > startNum) {
                 seriesNumbers.add(runningSeqNumber);
             }
-            k++;
+            seriesCounter++;
         }
         List<String> stringList = seriesNumbers.stream().map(String::valueOf).collect(Collectors.toList());
         String joinedString = String.join("", stringList);
@@ -62,16 +62,16 @@ public class DigitCountTest {
     void testNumber3() {
         Integer endNum = 77;
         Integer startNum = 7;
-        int k = 0;
+        int seriesCounter = 0;
         Integer param = 7;
         List<Integer> seriesNumbers = new ArrayList<>();
         Integer runningSeqNumber = 0;
         while (runningSeqNumber <= endNum) {
-            runningSeqNumber = param + 10 * k;
+            runningSeqNumber = param + 10 * seriesCounter;
             if (runningSeqNumber <= endNum && runningSeqNumber >= startNum) {
                 seriesNumbers.add(runningSeqNumber);
             }
-            k++;
+            seriesCounter++;
         }
         List<String> stringList = seriesNumbers.stream().map(String::valueOf).collect(Collectors.toList());
         String joinedString = String.join("", stringList);
